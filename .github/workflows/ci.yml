@@ -1,4 +1,5 @@
-name: deploy
+# CI on github actionn
+name: Build project
 
 on:
   push:
@@ -22,4 +23,5 @@ jobs:
     steps:
       - name: print lgo
         run: |
-          echo "What can i do?"
+          dist:
+          echo ls -al
