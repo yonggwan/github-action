@@ -14,8 +14,8 @@ jobs:
       - name: checkout master
         uses: actions/checkout@v2
         
-      - name: setup node v.12 
-      - uses: actions/setup-node@v2
+      - name: setup node version 12
+        uses: actions/setup-node@v2
         with:
           node-version: '12'
       
@@ -40,5 +40,5 @@ jobs:
     needs: [building]
     runs-on: [macos-latest]
     steps:
-      - name: print log
-        run: echo ls-al
+      - name: pront dist
+        run: ls -al
