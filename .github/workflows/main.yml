@@ -1,0 +1,22 @@
+name: deploy
+
+on: push
+  branches:
+    - master
+
+jobs:
+  building:
+    name: build
+    runs-on: [macos-latest]
+    steps:
+      - name: checkout master
+      uses: actions/checkout@v2
+      - name: install package
+      run: npm install
+      - name: build
+      run: npm run build
+  deploying:
+    name: deploy
+    runs-on: [macos-latest]
+    steps:
+      run: echo "What can i do?"
