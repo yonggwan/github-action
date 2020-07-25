@@ -22,6 +22,4 @@ jobs:
     runs-on: [macos-latest]
     steps:
       - name: print lgo
-        run: |
-          dist:
-          echo ls -al
+        run: echo "dist:" ls -al
