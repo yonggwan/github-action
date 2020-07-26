@@ -9,7 +9,7 @@ on:
     - master
 
 jobs:
-  building:
+  build_job:
     name: build
     runs-on: [macos-latest]
     steps:
@@ -37,9 +37,26 @@ jobs:
         
       - name: build
         run: npm run build
+      
+      - name: Upload a build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: distributes
+          path: build
 
-      - name: deploy
-        run: ls -al
+      - name: ls build
+        run: ls -al build
+        
+  publish_job:
+    name: publish
+    runs-on: [macos-latest]
+    needs: [build_job]
+    steps:
+      - name: Download artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: distributes
+          path: build
         
       - name: copy to s3
         env:
@@ -47,3 +64,5 @@ jobs:
           AWS_SECRET_ACCESS_KEY: '${{ secrets.AWS_SECRET_ACCESS_KEY }}'
         run: |
           aws s3 cp --recursive --region ap-northeast-2 build s3://modooteam-travis
+
+    
