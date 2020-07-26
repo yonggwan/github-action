@@ -29,7 +29,7 @@ jobs:
             **/node_modules
           # An explicit key for restoring and saving the cache
           key: ${{hashFiles('**/package-lock.json')}}_build_${{runner.os}}
-          # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
+          # An ordered list of keys to use for restoring the cache if no cache hit occurred for key!
           # restore-keys: <optional>
 
       - name: install package
