@@ -35,13 +35,10 @@ jobs:
         
       - name: build
         run: npm run build
-  deploying:
-    name: deploy
-    needs: [building]
-    runs-on: [macos-latest]
-    steps:
-      - name: print build
+
+      - name: deploy
         run: ls -al
+        
       - name: copy to s3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
