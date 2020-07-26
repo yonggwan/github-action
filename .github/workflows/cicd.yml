@@ -53,7 +53,7 @@ jobs:
     needs: [build_job]
     steps:
       - name: Download artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/download-artifact@v2
         with:
           name: distributes
           path: build
