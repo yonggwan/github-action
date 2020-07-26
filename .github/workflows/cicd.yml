@@ -3,6 +3,8 @@ name: Build project
 
 on:
   push:
+    paths-ignore:
+      - '*.md'
     branches:
     - master
 
