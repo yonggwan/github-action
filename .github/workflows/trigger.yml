@@ -1,19 +1,31 @@
 name: Trigger test
-
+env: 
+  isFoo: ${{ github.ref == 'refs/heads/test' && 'Y' || 'N' }}
 on:
   push:
     branches:
     - test
 
 jobs:
-  test_job:
-    name: test_job
+  test_job_A:
+    name: set_env
     runs-on: [ubuntu-latest]
-
+    env: 
+      foo: 'bar'
     steps:
       - name: test
-        env:
-          foo: 'bar'
+        run: | 
+          echo 'done';
+          
+  test_job_B:
+    name: print_env
+    runs-on: [ubuntu-latest]
+    env: 
+      foo2: 'bar2'
+    steps:
+      - name: pring env
         run: |
-          echo |
-            'it works.'
+          echo foo is ${{ env.foo }}
+          echo foo2 is ${{ env.foo2 }}
+          echo isFoo is ${{ env.isFoo }}
+    
