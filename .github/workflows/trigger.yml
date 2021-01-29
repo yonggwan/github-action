@@ -22,5 +22,5 @@ jobs:
     steps:
       - name: pring env
         run: |
-          echo ${{ env.foo }}
+          echo foo is ${{ env.foo }}
     
