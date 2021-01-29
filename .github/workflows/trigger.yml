@@ -13,6 +13,8 @@ jobs:
       foo: 'bar'
     steps:
       - name: test
+        run: | 
+          echo 'done';
           
   test_job_B:
     name: print_env
