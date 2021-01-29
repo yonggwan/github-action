@@ -19,8 +19,11 @@ jobs:
   test_job_B:
     name: print_env
     runs-on: [ubuntu-latest]
+    env: 
+      foo2: 'bar2'
     steps:
       - name: pring env
         run: |
           echo foo is ${{ env.foo }}
+          echo foo2 is ${{ env.foo2 }}
     
