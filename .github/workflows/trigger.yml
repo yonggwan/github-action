@@ -6,12 +6,19 @@ on:
     - test
 
 jobs:
-  test_job:
-    name: test_job
+  test_job_A:
+    name: set_env
     runs-on: [ubuntu-latest]
     env: 
       foo: 'bar'
     steps:
       - name: test
+          
+  test_job_B:
+    name: print_env
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: pring env
         run: |
           echo ${{ env.foo }}
+    
