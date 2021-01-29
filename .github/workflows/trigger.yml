@@ -9,11 +9,9 @@ jobs:
   test_job:
     name: test_job
     runs-on: [ubuntu-latest]
-
+    env: 
+      foo: 'bar'
     steps:
       - name: test
-        env:
-          foo: 'bar'
-        run: |
-          echo |
-            'it works.'
+      - run: |
+          echo env.foo
