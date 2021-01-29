@@ -1,4 +1,6 @@
 ![Build project](https://github.com/yonggwan/github-action/workflows/Build%20project/badge.svg)
+![Slack test](https://github.com/yonggwan/github-action/workflows/Slack%20test/badge.svg)
+
 # github-action
 Deploy to aws s3 bucket by github actions
 
