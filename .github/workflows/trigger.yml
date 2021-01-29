@@ -13,5 +13,5 @@ jobs:
       foo: 'bar'
     steps:
       - name: test
-      - run: |
+        run: |
           echo env.foo
