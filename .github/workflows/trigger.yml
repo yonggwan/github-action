@@ -1,5 +1,6 @@
 name: Trigger test
-
+env: 
+  isFoo: ${{ github.ref == 'refs/heads/test' && 'Y' || 'N' }}
 on:
   push:
     branches:
@@ -26,4 +27,5 @@ jobs:
         run: |
           echo foo is ${{ env.foo }}
           echo foo2 is ${{ env.foo2 }}
+          echo isFoo is ${{ env.isFoo }}
     
