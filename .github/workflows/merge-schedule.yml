@@ -19,6 +19,6 @@ jobs:
           # rebase. Default is merge.
           merge_method: squash
           #  Time zone to use. Default is UTC.
-          # time_zone: 'Asia/Seoul'
+          time_zone: UTC
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
