@@ -1,4 +1,4 @@
-name: Merge Schedule
+name: Merge Schedule Workflow
 on:
   pull_request:
     types:
